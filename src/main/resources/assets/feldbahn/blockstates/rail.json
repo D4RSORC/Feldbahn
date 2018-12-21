@@ -1,0 +1,13 @@
+{
+	"forge_marker": 1,
+	"defaults":
+	{
+		"model": "feldbahn:track_straight/rail"
+	},
+	"variants": {
+		"normal": [{}],
+		"inventory": {
+			"model": "feldbahn:rail"
+			}
+	}
+}

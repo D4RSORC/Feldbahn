@@ -1,0 +1,14 @@
+{
+	"forge_marker": 1,
+	"defaults":
+	{
+		"model": "feldbahn:big_locomotive/locomotive.obj",
+		"transform": {
+			"scale": [ 0.08, 0.08, 0.08 ]
+		}
+	},
+	"variants": {
+		"normal": [{}],
+		"inventory": [{}]
+	}
+}
