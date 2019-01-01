@@ -2,6 +2,7 @@ package com.d4rsorc.feldbahn.render;
 
 import org.lwjgl.opengl.GL11;
 
+import com.d4rsorc.feldbahn.entity.EntityCartBase;
 import com.d4rsorc.feldbahn.entity.EntityWagon;
 import com.d4rsorc.feldbahn.entity.EntityWagonBrake;
 import com.d4rsorc.feldbahn.item.Items;
@@ -26,7 +27,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class RenderWagon<T extends EntityMinecartChest> extends Render<T>{
+public class RenderWagon<T extends EntityCartBase> extends Render<T>{
 
 	public RenderWagon(RenderManager renderManager) {
 		super(renderManager);
@@ -104,15 +105,15 @@ public class RenderWagon<T extends EntityMinecartChest> extends Render<T>{
 
         IBlockState iblockstate = entity.getDisplayTile();
 
-        if (iblockstate.getRenderType() != EnumBlockRenderType.INVISIBLE)
-        {
-            GlStateManager.pushMatrix();
-            float f4 = 0.75F;
-            GlStateManager.scale(0.75F, 0.75F, 0.75F);
-            GlStateManager.translate(-0.5F, (float)(j - 8) / 16.0F, 0.5F);
-            GlStateManager.popMatrix();
-            GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
-        }
+//        if (iblockstate.getRenderType() != EnumBlockRenderType.INVISIBLE)
+//        {
+//            GlStateManager.pushMatrix();
+//            float f4 = 0.75F;
+//            GlStateManager.scale(0.75F, 0.75F, 0.75F);
+//            GlStateManager.translate(-0.5F, (float)(j - 8) / 16.0F, 0.5F);
+//            GlStateManager.popMatrix();
+//            GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+//        }
 
         GlStateManager.scale(1.0F, 1.0F, 1.0F);
         

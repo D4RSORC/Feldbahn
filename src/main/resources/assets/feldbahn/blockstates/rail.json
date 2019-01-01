@@ -6,8 +6,20 @@
 	},
 	"variants": {
 		"normal": [{}],
-		"inventory": {
-			"model": "feldbahn:rail"
-			}
+		"inventory": [{ "model": "feldbahn:rail" }],
+		"shape": {
+			"north_south": {"model": "feldbahn:track_straight/rail"},
+        		"east_west": {"model": "feldbahn:track_straight/rail", "y": 90},
+			"ascending_east": {"model": "feldbahn:track_straight/rail", "y": 90 },
+        		"ascending_west": {"model": "feldbahn:track_straight/rail", "y": 90 },
+        		"ascending_north": {"model": "feldbahn:track_straight/rail"},
+        		"ascending_south": {"model": "feldbahn:track_straight/rail"},
+        		"south_east": {"model": "feldbahn:track_straight/rail"},
+        		"south_west": {"model": "feldbahn:track_straight/rail", "y": 90 },
+        		"north_west": {"model": "feldbahn:track_straight/rail", "y": 180 },
+        		"north_east": {"model": "feldbahn:track_straight/rail", "y": 270 }
+
+		}
+		
 	}
 }

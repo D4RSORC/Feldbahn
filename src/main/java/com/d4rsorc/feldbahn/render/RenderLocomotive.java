@@ -2,6 +2,7 @@ package com.d4rsorc.feldbahn.render;
 
 import org.lwjgl.opengl.GL11;
 
+import com.d4rsorc.feldbahn.entity.EntityCartBase;
 import com.d4rsorc.feldbahn.entity.EntityLocomotive;
 import com.d4rsorc.feldbahn.entity.EntityWagon;
 import com.d4rsorc.feldbahn.item.Items;
@@ -26,7 +27,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class RenderLocomotive<T extends EntityMinecartChest> extends Render<T>{
+public class RenderLocomotive<T extends EntityCartBase> extends Render<T>{
 
 	public RenderLocomotive(RenderManager renderManager) {
 		super(renderManager);
@@ -79,8 +80,8 @@ public class RenderLocomotive<T extends EntityMinecartChest> extends Render<T>{
         }
 
         GlStateManager.translate((float)x, (float)y + 0.375F, (float)z);
-        if(entity instanceof EntityLocomotive) GlStateManager.rotate(270.0F - entityYaw, 0.0F, 1.0F, 0.0F);
-        else GlStateManager.rotate(180.0F - entityYaw, 0.0F, 1.0F, 0.0F);
+        if(entity instanceof EntityLocomotive) GlStateManager.rotate(360.0F - entityYaw, 0.0F, 1.0F, 0.0F);
+        else GlStateManager.rotate(270.0F - entityYaw, 0.0F, 1.0F, 0.0F);
         
         GlStateManager.rotate(-f3, 0.0F, 0.0F, 1.0F);
         float f5 = (float)entity.getRollingAmplitude() - partialTicks;

@@ -3,6 +3,7 @@ package com.d4rsorc.feldbahn.item;
 import com.d4rsorc.feldbahn.block.BlockRailBase;
 import com.d4rsorc.feldbahn.entity.EntityLocomotive;
 import com.d4rsorc.feldbahn.entity.EntityLocomotiveSmall;
+import com.d4rsorc.feldbahn.entity.EntityRollingBase;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.item.EntityMinecart;
@@ -38,16 +39,16 @@ public class ItemLocomotive extends Item{
 			
 			if (!worldIn.isRemote)
             {
-                //BlockRailBase.EnumRailDirection blockrailbase$enumraildirection = iblockstate.getBlock() instanceof BlockRailBase ? ((BlockRailBase)iblockstate.getBlock()).getRailDirection(worldIn, pos, iblockstate, null) : BlockRailBase.EnumRailDirection.NORTH_SOUTH;
+                BlockRailBase.EnumRailDirection blockrailbase$enumraildirection = iblockstate.getBlock() instanceof BlockRailBase ? ((BlockRailBase)iblockstate.getBlock()).getRailDirection(worldIn, pos, iblockstate, null) : BlockRailBase.EnumRailDirection.NORTH_SOUTH;
                 double d0 = 0.0D;
 
-//                if (blockrailbase$enumraildirection.isAscending())
-//                {
-//                    d0 = 0.5D;
-//                }
+                if (blockrailbase$enumraildirection.isAscending())
+                {
+                    d0 = 0.5D;
+                }
            
 			boolean isBig = this.getUnlocalizedName().equals(Items.LOCOMOTIVE_BIG.getUnlocalizedName());
-			EntityMinecartChest entitylocomotive = isBig ? new EntityLocomotive(worldIn, (double)pos.getX() + 0.5D, (double)pos.getY() + 0.0625D, (double)pos.getZ() + 0.5D) : new EntityLocomotiveSmall(worldIn, (double)pos.getX() + 0.5D, (double)pos.getY() + 0.0625D, (double)pos.getZ() + 0.5D);
+			EntityRollingBase entitylocomotive = isBig ? new EntityLocomotive(worldIn, (double)pos.getX() + 0.5D, (double)pos.getY() + 0.0625D + d0, (double)pos.getZ() + 0.5D) : new EntityLocomotiveSmall(worldIn, (double)pos.getX() + 0.5D, (double)pos.getY() + 0.0625D, (double)pos.getZ() + 0.5D);
 	
 			if (itemstack.hasDisplayName())
             {
